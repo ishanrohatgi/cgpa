@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cgpa calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <nav id="navbar">
+        <a href="https://aktu.ac.in/pdf/about-us/B.%20Tech.%20Ordinance_2016-17.pdf" target="_blank">Cbcs System </a>
+        <a href="https://aktu.ac.in/" target="_blank">University Website</a>
+        <img src="https://aktu.ac.in/images/logo.png" alt="University logo">
+        <h1>Dr. A.P.J Abdul Kalam Technical University </h1>
+    </nav>
+    <div id="below_n">
+
+        <h2>CGPA Calculator</h2>
+
+    </div>
+    <div id="main_body">
+        <form id="info">
+            <label for="1stsem">1st sem sgpa</label>
+            <input id="1stsem" type="text">
+
+            <label for="2ndsem">2nd sem sgpa</label>
+            <input id="2ndsem" type="text">
+            <label for="3rdsem">3rd sem sgpa</label>
+            <input id="3rdsem" type="text">
+
+            <label for="4thsem">4th sem sgpa</label>
+            <input id="4thsem" type="text">
+
+            <label for="5thsem">5th sem sgpa</label>
+            <input id="5thsem" type="text">
+
+            <label for="6thsem">6th sem sgpa</label>
+            <input id="6thsem" type="text">
+
+            <label for="7thsem">7th sem sgpa</label>
+            <input id="7thsem" type="text">
+
+            <label for="8thsem">8th sem sgpa</label>
+            <input id="8thsem" type="text">
+            
+
+        </form>
+        <button id="sub" onclick="fun1()">Submit</button>
+            <span id="text" class="up">Total CGPA: </span>
+            <div id="show"></div>
+
+        <footer>
+            <hr>
+            <code>This is non responsive site for CBCS system AKTU</code>
+            <code>Fully made and Developed by &copy; ISHAN ROHATGI  and It is not made and maintained by University</code>
+        </footer>
+</body>
+<script>
+    function fun1() {
+        a = [];
+        a[0] = Number(document.getElementById("1stsem").value);
+
+        a[1] = Number(document.getElementById("2ndsem").value);
+        a[2] = Number(document.getElementById("3rdsem").value);
+        a[3] = Number(document.getElementById("4thsem").value);
+        a[4] = Number(document.getElementById("5thsem").value);
+        a[5] = Number(document.getElementById("6thsem").value);
+        a[6] = Number(document.getElementById("7thsem").value);
+        a[7] = Number(document.getElementById("8thsem").value);
+        var tot=0;
+        var cnt=0;
+        for(var i=0;i<8;i++){
+            if(Number(a[i])==0){
+                cnt+=1;
+            }
+            else{
+                tot+=Number(a[i]);
+            }
+
+
+        }
+        var cgpa=tot/(8-cnt);
+        document.getElementById("show").innerHTML=`<span class="up">${cgpa.toFixed(2)}</span>`;
+
+
+    }
+
+
+</script>
+
+</html>
